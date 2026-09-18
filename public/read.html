@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <a href="/home">home</a>
+    <h4>hiii</h4>
+
+    <div class="box" id="box"></div>
+    
+
+    <script>
+        const box = document.getElementById("box")
+        async function getdata() {
+            const datas = await fetch("/data")
+            const jsondata = await datas.json()
+            console.log(jsondata)
+
+            jsondata.forEach((data)=>{
+                box.innerHTML +=`
+                <div>
+                <h2>Username : ${data.name} </h2>
+                <h3>Userage : ${data.age} </h3>
+                <a href="/edit?id=${data._id}" > edit </a>
+                <button onclick = "deletedata('${data._id}')"> delete </button>
+                </div>
+                `
+            })
+
+        }
+    
+
+        async function deletedata(id){
+            const cd = confirm("are you sure to delete")
+            console.log(id)
+
+            if(cd){
+                await fetch(`/delete/${id}`,{method:"POST"})
+               window.location.reload()
+            }
+            else{
+                console.log("no")
+            }
+            
+        }
+
+    
+    
+getdata()
+    </script>
+
+</body>
+</html>

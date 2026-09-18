@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="/update" method="post">
+        <input type="hidden" name="id" id="id">
+        <input type="text" name="username" id="name">
+        <input type="text" name="age" id="age">
+        <button type="submit">update</button>    
+    
+    </form>
+
+    <script>
+        const url = new URLSearchParams(window.location.search)
+        const id  = url.get("id")
+        // console.log(id)
+        async function getdata(){
+            const datas = await fetch(`/read/${id}`)
+            const jsondata = await datas.json()
+            // console.log(jsondata)
+            document.getElementById("name").value = jsondata.name
+             document.getElementById("age").value = jsondata.age
+             document.getElementById("id").value = id
+
+        }
+        getdata()
+    </script>
+
+</body>
+</html>
