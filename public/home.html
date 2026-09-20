@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+
+
+        * { box-sizing: border-box; } body { margin: 0; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; font-family: Arial, sans-serif; background: linear-gradient(135deg, #667eea, #764ba2); } h1 { color: white; margin-bottom: 10px; text-align: center; } /* Logout */ a { display: inline-block; margin-bottom: 25px; padding: 10px 18px; background-color: #e74c3c; color: white; text-decoration: none; border-radius: 7px; } a:hover { background-color: #c0392b; } /* Form */ form { width: 100%; max-width: 400px; padding: 30px; background-color: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); } input { width: 100%; padding: 13px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 7px; font-size: 16px; outline: none; } input:focus { border-color: #667eea; } button { width: 100%; padding: 13px; border: none; border-radius: 7px; background-color: #667eea; color: white; font-size: 16px; font-weight: bold; cursor: pointer; } button:hover { background-color: #5568d8; } /* Mobile */ @media (max-width: 500px) { body { padding: 15px; } h1 { font-size: 25px; } form { padding: 22px; } input { font-size: 15px; padding: 12px; } }
+   
+   
+   </style>
 </head>
 <body>
 
@@ -12,12 +19,13 @@
     </h1>
 
     <a href="/logout">logout </a>
+    <a href="/read">Read all user</a>
 
-<br><br><br><br><br>
+
 
     <form action="/submit" method="post" >
-        <input type="text" name="username" required id="">
-        <input type="text" name="age" required id="">
+        <input type="text" name="username" placeholder="Enter the name" required id="">
+        <input type="text" name="age" placeholder="enter the age" required id="">
         <button type="submit">submit</button>
     </form>
 

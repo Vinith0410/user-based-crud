@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../form.css">
 </head>
 <body>
 
     <form action="/login" method="post">
-        <input type="email" name="mail" id="">
-        <input type="password" name="password" id="">
-        <input type="submit" value="login" name="" id="">
+        <input type="email" name="mail" id="" required placeholder="Enter the Mail ID">
+        <input type="password" name="password" required id="" placeholder="Enter the Password">
+        <input type="submit" value="login" name="" id="" >
+        <p>Don't have a account yet? <a href="/">Register Here</a></p>
     </form>
     
 </body>
